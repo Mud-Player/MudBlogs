@@ -315,7 +315,7 @@
 
   3. 发布
 
-     编译生成的`geoservices`文件夹就可以作为插件使用了，当其他项目使用时，需要`geoservices`文件夹和`exe执行文件`在用一个目录（windows平台）。
+     编译生成的`geoservices`文件夹就可以作为插件使用了，当其他项目使用时，需要`geoservices`文件夹和`exe执行文件`在同一个目录（windows平台）。
 
 ## 4. 总结
 
