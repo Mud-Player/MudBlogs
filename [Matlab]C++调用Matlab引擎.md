@@ -1,7 +1,7 @@
 # [MATLAB]C++调用MATLAB引擎
 
 - MATLAB版本：R2018b
-- 操作系统：Window 10
+- 操作系统：Windows 10
 
 ## 1 需求分析
 
@@ -80,8 +80,9 @@ target_link_libraries(${PROJECT_NAME} PUBLIC ${MATLAB_ROOT}/extern/lib/win64/mic
 注：
 
 对于Windows环境，需要使用到libMatlabEngine和libMatlabDataArray这两个库，对MATLAB引擎的调用实际上是对MATLAB动态库的调用。
-qmake可以添加`LIBS += -L$$(MATLAB_ROOT) -l$$(MATLAB_ROOT)/extern/lib/win64/microsoft/libMatlabEngine.lib -l$$(MATLAB_ROOT)/extern/lib/win64/microsoft/libMatlabDataArray.lib)`实现动态库的添加；
-vs可以通过界面`1.工程属性 > 链接器 > 工程属性 > 链接器 附加库目录 2.工程属性 > 链接器 > 输入 > 附加依赖项`完成库的添加。
+
+qmake可以通过`INCLUDEPATH += $$(MATLAB_ROOT)/extern/include`添加头文件目录，以及`LIBS += -L$$(MATLAB_ROOT)/extern/lib/win64/microsoft -llibMatlabEngine.lib -llibMatlabDataArray.lib)`添加链接库文件；
+vs可以通过界面菜单栏的`项目 > 属性`进入，然后依次`C/C++ > 常规 > 附加包含目录`添加头文件目录，以及`1.链接器 > 附加库目录 2.链接器 > 输入 > 附加依赖项`添加链接库文件。
 
 ### 4.3 编码
 
@@ -180,7 +181,7 @@ MATLAB运行时主要依赖libMatlabEngine.dll和libMatlabDataArray.dll两个动
    ```
    function [output] = mysum(inputArg1,inputArg2)
    output = inputArg1 + inputArg2;
-end
+   end
    ```
    
    4.2 将mysum.m移动到exe工作路径（不是exe文件路径），或者通过[`path`](https://localhost:31515/static/help/matlab/ref/path.html?searchHighlight=path&searchResultIndex=1)命令添加mysum目录；
@@ -196,4 +197,4 @@ end
        label->show();
    ```
 
-测试代码地址：https://github.com/Mud-Player/MatlabEngine
+测试代码地址：<https://github.com/Mud-Player/MatlabEngine>
