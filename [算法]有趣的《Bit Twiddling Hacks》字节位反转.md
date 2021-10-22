@@ -1,6 +1,6 @@
-﻿﻿﻿﻿﻿﻿# [算法]有趣的《Bit Twiddling Hacks》字节位反转
+﻿﻿﻿﻿﻿﻿﻿# [算法]有趣的《Bit Twiddling Hacks》字节位反转
 
-给定一个字节*`input`*，定义其二进制为`abcd efgh`，将其比特位进行反转。
+给定一个字节`input`，定义其二进制为`abcd efgh`，将其比特位进行反转。
 
 ## 1. 乘+与+取模
 
