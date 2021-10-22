@@ -1,4 +1,4 @@
-﻿﻿﻿# [算法]有趣的《Bit Twiddling Hacks》字节位反转
+﻿﻿﻿﻿﻿﻿# [算法]有趣的《Bit Twiddling Hacks》字节位反转
 
 给定一个字节*`input`*，定义其二进制为`abcd efgh`，将其比特位进行反转。
 
@@ -53,7 +53,7 @@ $$
 
 首先，了解两个公式：
 
-1. $x^n ≡ 1\  (mod \  x-1) $
+1. $x^n ≡ 1 (mod\ x-1)$
 
    比如100 ≡ 1 (mod 9)，1000 ≡ 1 (mod 9)。
 
@@ -63,7 +63,7 @@ $$
 
 所以对1023取模，可以这样理解：
 
-```c
+```
 y ≡ 0000000000a 0000f000b0 000g000c00 00h000d000 00000e0000 
   ≡ a*x^4 + 0000f000b0*x^3 + 000g000c00*x^2 + 00h000d000*x +00000e0000 
   ≡ a + 0000f000b0 + 000g000c00 + 00h000d000 + 00000e0000 (mod x - 1)
@@ -83,5 +83,4 @@ y ≡ 0000000000a 0000f000b0 000g000c00 00h000d000 00000e0000
 $$
 reverted = ((input\  * \ 0x80200802ULL)\  \& \ 0x0884422110ULL) \ *\ 0x0101010101ULL >> 32
 $$
-原理看这里：http://graphics.stanford.edu/~seander/bithacks.html#ReverseByteWith64Bits
-
+原理看这里：[Reverse the bits in a byte with 4 operations (64-bit multiply, no division):](http://graphics.stanford.edu/~seander/bithacks.html#ReverseByteWith64Bits)
