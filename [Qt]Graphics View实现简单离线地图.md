@@ -311,5 +311,14 @@ protected:
 
 ## 4. 源码
 
-<https://github.com/Mud-Player/GraphicsMapLib>
+代码测试：
 
+```
+   auto map = new GraphicsMap;
+   map->setTilePath("E:/map/sate");
+   map->show();
+```
+
+![](https://raw.githubusercontent.com/Mud-Player/MudPic/main/02GraphicsMapLib/quick_sate.png)
+
+源码地址：<https://github.com/Mud-Player/GraphicsMapLib>
